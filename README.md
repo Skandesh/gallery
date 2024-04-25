@@ -2,8 +2,8 @@
 
 ## To-Do
 
-- [ ] Make it deploy
-- [ ] Scaffold basic UI with mock data
+- [x] Make it deploy
+- [x] Scaffold basic UI with mock data
 - [ ] Actually setup DB
 - [ ] Add auth
 - [ ] Add image upload
