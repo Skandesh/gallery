@@ -4,7 +4,8 @@
 
 - [x] Make it deploy
 - [x] Scaffold basic UI with mock data
-- [ ] Actually setup DB
+- [x] Actually setup DB
+- [x] Attach database to UI
 - [ ] Add auth
 - [ ] Add image upload
 - [ ] Error management
@@ -12,3 +13,4 @@
 - [ ] Delete button
 - [ ] Analytics
 - [ ] Ratelimiting
+
