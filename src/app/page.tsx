@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
@@ -15,21 +16,34 @@ const mockImgs = mockUrls.map((url, idx) => ({
   url,
 }));
 
-export default async function HomePage() {
+async function Images() {
   const images = await db.query.images.findMany({
     orderBy: (model, { desc }) => desc(model.id),
   });
-
   return (
-    <main className="min-h-screen w-full bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="flex  flex-wrap items-center justify-center gap-4 ">
-        {[...images, ...images, ...images].map((img, idx) => (
-          <div key={img.id + "-" + idx + 1} className="flex  w-48 flex-col ">
-            <img src={img.url} height={500} width={300} />
-            <div className="p-4">{img.name}</div>
-          </div>
-        ))}
-      </div>
+    <div className="flex  flex-wrap items-center justify-center gap-4 ">
+      {[...images, ...images, ...images].map((img, idx) => (
+        <div key={img.id + "-" + idx + 1} className="flex  w-48 flex-col ">
+          <img src={img.url} height={500} width={300} />
+          <div className="p-4">{img.name}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default async function HomePage() {
+  return (
+    <main className="h-full min-h-screen w-full bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+      <SignedOut>
+        <div className="h-full w-full p-28 text-center text-2xl">
+          Please Sign In
+        </div>
+      </SignedOut>
+
+      <SignedIn>
+        <Images />
+      </SignedIn>
     </main>
   );
 }
