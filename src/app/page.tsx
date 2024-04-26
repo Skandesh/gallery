@@ -24,10 +24,7 @@ export default async function HomePage() {
     <main className="min-h-screen w-full bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <div className="flex  flex-wrap items-center justify-center gap-4 ">
         {[...images, ...images, ...images].map((img, idx) => (
-          <div
-            key={img.id + "-" + idx + 1}
-            className="flex  w-48 flex-col bg-red-700"
-          >
+          <div key={img.id + "-" + idx + 1} className="flex  w-48 flex-col ">
             <img src={img.url} height={500} width={300} />
             <div className="p-4">{img.name}</div>
           </div>

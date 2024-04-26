@@ -6,11 +6,10 @@
 - [x] Scaffold basic UI with mock data
 - [x] Actually setup DB
 - [x] Attach database to UI
-- [ ] Add auth
+- [x] Add auth using Clerk
 - [ ] Add image upload
 - [ ] Error management
 - [ ] Routing image page
 - [ ] Delete button
 - [ ] Analytics
 - [ ] Ratelimiting
-
